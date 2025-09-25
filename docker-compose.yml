@@ -8,7 +8,7 @@ services:
     build:
       context: ./.docker/nginx
       dockerfile: Dockerfile
-    image: frehman/nginximages:999
+    image: maryam2710/cloud_computing2:4
     ports:
       - 80:80
     volumes:
@@ -22,7 +22,7 @@ services:
     build:
       context: ./.docker/php
       dockerfile: Dockerfile
-    image: frehman/phpimages:999
+    image: maryam2710/cloud_computing2:1
     working_dir: /var/www/php
     volumes:
       - ./src:/var/www/php
@@ -34,7 +34,7 @@ services:
     build:
       context: ./.docker/mysql
       dockerfile: Dockerfile
-    image: frehman/mysqlimages:999
+    image: maryam2710/cloud_computing2:2
     environment:
       MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
       MYSQL_ROOT_HOST: "%"
@@ -53,7 +53,7 @@ services:
    build:
      context: ./.docker/phpmyadmin
      dockerfile: Dockerfile
-   image: frehman/myadminimages:999
+   image: maryam2710/cloud_computing2:3
    environment:
      MYSQL_USERNAME: root
      MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
