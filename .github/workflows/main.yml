@@ -2,7 +2,7 @@ name: LEMP Server
 on:
   push:
     branches:
-    - mainnnnn
+    - main
 jobs:
   Build-App:
     runs-on: ubuntu-latest
