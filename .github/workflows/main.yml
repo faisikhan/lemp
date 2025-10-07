@@ -37,6 +37,6 @@ jobs:
 
       - name: Deploy all Containers to ECS using Fargate
         run: |
-          docker context create ecs lemp-ecscontext --from-env
-          docker context use lemp-ecscontext
+          docker context create ecs lemp-ecs
+          docker context use lemp-ecs
           docker compose up
