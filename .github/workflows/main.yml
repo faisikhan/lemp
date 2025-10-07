@@ -34,9 +34,13 @@ jobs:
       - name: Push Docker images to Amazon Elastic Container Registry
         run: docker compose push   
 
+      - name: Install AWS CLI ECS plugin
+        run: |
+          pip install awscli awscli-plugin-ecs
 
       - name: Deploy all Containers to ECS using Fargate
         run: |
+          docker context create --help       
           docker context create ecs lemp-ecs
           docker context use lemp-ecs
           docker compose up
