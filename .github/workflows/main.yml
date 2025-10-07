@@ -38,4 +38,4 @@ jobs:
         run: |
            docker context create lemp-ecs       
            docker context use lemp-ecs
-           docker compose up
+           docker compose up -d
