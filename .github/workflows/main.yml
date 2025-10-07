@@ -36,10 +36,10 @@ jobs:
 
       - name: Install AWS CLI and ECS Compose plugin
         run: |
-          pip install awscli
-          pip install awscli-plugin-ecs
+          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+          unzip awscliv2.zip
+          sudo ./aws/install --update
           aws --version
-          aws ecs help | head -n 5
           
       - name: Deploy all Containers to ECS using Fargate
         run: |
