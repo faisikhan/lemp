@@ -2,7 +2,7 @@ name: LEMP Server
 on:
   push:
     branches:
-    - main
+    - mainnnnn
 jobs:
   Build-App:
     runs-on: ubuntu-latest
@@ -33,3 +33,10 @@ jobs:
           
       - name: Push Docker images to Amazon Elastic Container Registry
         run: docker compose push   
+
+
+      - name: Deploy all Containers to ECS using Fargate
+        run: |
+          docker context create ecs lemp-ecscontext --from-env
+          docker context use lemp-ecscontext
+          docker compose up
