@@ -2,7 +2,7 @@ name: LEMP Server
 on:
   push:
     branches:
-    - mainnnn
+    - main
 jobs:
   Build-App:
     runs-on: self-hosted
