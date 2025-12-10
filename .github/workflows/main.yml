@@ -4,7 +4,7 @@ on:
     branches:
     - main
 jobs:
-  Build-App:
+  Docker-LEMP:
     runs-on: self-hosted
     env:
       BUILD_NUMBER: ${{ github.run_number }}
