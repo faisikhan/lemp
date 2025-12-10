@@ -10,7 +10,7 @@ jobs:
       BUILD_NUMBER: ${{ github.run_number }}
     steps:
       - uses: actions/checkout@v3
-      - name: Install Docker Compose on the Runner
+      - name: Install Docker Compose on the Self-hosted Runner
         run: |
             mkdir -p ~/.docker/cli-plugins/
             curl -SL https://github.com/docker/compose/releases/latest/download/docker-compose-linux-x86_64 -o ~/.docker/cli-plugins/docker-compose
