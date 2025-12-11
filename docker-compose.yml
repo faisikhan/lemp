@@ -1,9 +1,6 @@
 version: '3'
 
-# Services
 services:
-
-  # Nginx Service
   nginx:
     build:
       context: ./.docker/nginx
@@ -16,8 +13,6 @@ services:
       - ./.docker/nginx/conf.d:/etc/nginx/conf.d
     depends_on:
       - php
-
-  # PHP Service
   php:
     build:
       context: ./.docker/php
@@ -29,7 +24,6 @@ services:
     depends_on:
       - mysql
 
-  # MySQL Service
   mysql:
     build:
       context: ./.docker/mysql
@@ -47,8 +41,7 @@ services:
       interval: 5s
       retries: 10
 
-  # PHP MyAdmin
-  
+
   phpmyadmin:
    build:
      context: ./.docker/phpmyadmin
